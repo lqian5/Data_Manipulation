@@ -23,7 +23,7 @@ async def fetch(row, session):
         error_message = ''
         try:
             # async with timeout(5):
-            async with session.get(url, timeout=20, proxy='http://sysproxy.wal-mart.com:8080') as response:
+            async with session.get(url, timeout=20) as response: # can get proxy in get
                 resp = await response.read()
                 im_array = np.asarray(bytearray(resp), dtype=np.uint8)
                 return row, im_array
