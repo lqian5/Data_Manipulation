@@ -63,7 +63,7 @@ async def fetch(row, session, url_col, parent_directory=None):
             continue
         except Exception as e:
             error_message = 'Image download failed for {}, Unexpected error {}'.format(url, e)
-            logging.warning('Expected error for {}. {}'.format(url, e))
+            logging.warning('Unexpected error for {}. {}'.format(url, e))
             break
 
     return row, None
